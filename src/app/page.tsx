@@ -4,9 +4,10 @@ import { redirect } from 'next/navigation'
 
 import { AuthButtonServer } from './components/auth-button-server'
 import PostLists from './components/posts-list'
+import { type Database } from './types/database'
 
 export default async function Home () {
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = createServerComponentClient<Database>({ cookies })
   const { data: { session } } = await supabase.auth.getSession()
 
   if (session === null) {

@@ -1,6 +1,7 @@
 import PostCard from './post-card'
+import { type Post } from '../types/posts'
 
-const PostLists = ({ posts }) => {
+const PostLists = ({ posts }: { posts: Post[] | null }) => {
   return (
     <>
       {
