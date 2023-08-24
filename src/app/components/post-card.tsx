@@ -21,7 +21,7 @@ export default function PostCard ({
       <CardHeader className="justify-between">
         <div className="flex gap-x-2">
           <Link href={`/${userName}`}>
-            <Avatar isBordered radius="full" size="md" src={avatarUrl} />
+            <Avatar radius="full" size="md" src={avatarUrl} />
           </Link>
           <div className="flex flex-col gap-1 items-start justify-center">
             <h4 className="text-small font-semibold leading-none text-default-600">{userFullName}</h4>
@@ -29,12 +29,12 @@ export default function PostCard ({
           </div>
         </div>
       </CardHeader>
-      <CardBody className="px-3 py-0 text-small text-white">
+      <CardBody className="ml-[48px] px-3 py-0 text-small text-white">
         <p>
           {content}
         </p>
       </CardBody>
-      <CardFooter className="gap-3">
+      <CardFooter className="ml-[48px] gap-3">
         <button>
           <IconMessageCircle className='w-4 h-4' />
         </button>
