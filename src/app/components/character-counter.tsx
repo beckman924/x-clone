@@ -16,7 +16,6 @@ const CharacterCounter = ({ text }: { text: string }) => {
           valueLabel={remainingCharacters.toString()}
           showValueLabel={text.length >= 260}
           formatOptions={{ style: 'decimal' }}
-          className=''
           classNames={{
             svg: `transition-width ${text.length < 260 ? 'w-[25px] h-[25px]' : 'w-[30px] h-[30px]'}`,
             indicator: `transition-none ${text.length >= 290 ? 'hidden' : ''} ${text.length < 260 ? 'stroke-[#1D9BF0]' : text.length >= 260 && text.length <= 279 ? 'stroke-[#FFD400]' : 'stroke-[#F4212E]'}`,

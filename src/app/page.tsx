@@ -23,11 +23,15 @@ export default async function Home () {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
 
-      <section className='max-w-[800px] w-full mx-auto border-l border-r border-white/20 min-h-screen'>
+      <section className='max-w-[600px] w-full mx-auto border-l border-r border-white/20 min-h-screen'>
+        <div className='p-2 flex justify-between items-center'>
+          <h1 className='ml-[5px] text-xl font-bold text-center md:text-left'>Home</h1>
+          <AuthButtonServer />
+        </div>
+
         <ComposePost userAvatarUrl={session.user?.user_metadata?.avatar_url} />
         <PostLists posts={posts} />
       </section>
-      <AuthButtonServer />
     </main>
   )
 }

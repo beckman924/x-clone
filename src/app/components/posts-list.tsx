@@ -25,6 +25,7 @@ const PostLists = ({ posts }: { posts: Post[] | null }) => {
               key={id}
               userFullName={userFullName}
               userName={userName}
+              createdAt={post.created_at}
             />
           )
         })

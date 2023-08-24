@@ -18,8 +18,8 @@ const ComposePost = ({
     <form ref={formRef} action={async (formData) => {
       await addPost(formData)
       formRef.current?.reset()
-    }} className="flex flex-row p-3 border-b border-white/20">
-      <img className='rounded-full w-10 h-10 object-contain mt-[8px] mr-[8px]' src={userAvatarUrl} />
+    }} className="flex flex-row p-3 gap-x-2 border-b border-white/20">
+      <img className='rounded-full w-10 h-10 object-contain' src={userAvatarUrl} />
       <div className='flex flex-1 flex-col gap-y-4'>
         <textarea
           name="content"
