@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/indent */
 'use client'
 
@@ -8,13 +9,16 @@ import { GitHubIcon, GoogleIcon } from './icons'
 export function AuthButton ({ session }: { session: Session | null }) {
   const supabase = createClientComponentClient()
   const router = useRouter()
+  const redirectTo = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
+    ? `${process.env.NEXT_PUBLIC_PROD_URL}/auth/callback`
+    : 'http://localhost:3000/auth/callback'
 
   const handleSignInGithub = async () => {
     try {
       await supabase.auth.signInWithOAuth({
         provider: 'github',
         options: {
-          redirectTo: 'http://localhost:3000/auth/callback'
+          redirectTo
         }
       })
     } catch (error) {
@@ -28,7 +32,7 @@ export function AuthButton ({ session }: { session: Session | null }) {
       await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: 'http://localhost:3000/auth/callback'
+          redirectTo
         }
       })
     } catch (error) {
