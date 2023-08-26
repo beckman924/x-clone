@@ -9,6 +9,34 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
+      followers: {
+        Row: {
+          follower_id: string
+          following_id: string
+        }
+        Insert: {
+          follower_id: string
+          following_id: string
+        }
+        Update: {
+          follower_id?: string
+          following_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'followers_follower_id_fkey'
+            columns: ['follower_id']
+            referencedRelation: 'users'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'followers_following_id_fkey'
+            columns: ['following_id']
+            referencedRelation: 'users'
+            referencedColumns: ['id']
+          }
+        ]
+      }
       posts: {
         Row: {
           content: string

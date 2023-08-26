@@ -33,7 +33,7 @@ export default function PostCard ({
             <h4 className="text-small font-semibold leading-none text-default-600 tracking-tight truncate max-w-[9rem] md:max-w-[15rem]">{userFullName}</h4>
             <h5 className="text-small tracking-tight text-default-400 truncate max-w-[5rem] md:max-w-[9rem]">@{userName}</h5>
             <p className='text-small tracking-tight text-default-400'>·</p>
-            <p className='text-small tracking-tight text-default-400 truncate max-w-[5rem] md:max-w-full'>{dayjs().to(dayjs(createdAt))}</p>
+            <p className='text-small tracking-tight text-default-400 truncate max-w-[7rem] md:max-w-full'>{dayjs().to(dayjs(createdAt))}</p>
           </span>
 
           <p className="text-small text-white">

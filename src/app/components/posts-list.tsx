@@ -1,11 +1,11 @@
 import PostCard from './post-card'
-import { type Post } from '../types/posts'
+// import { type Post } from '../types/posts'
 
-const PostLists = ({ posts }: { posts: Post[] | null }) => {
+const PostLists = ({ posts }: { posts: any }) => {
   return (
     <>
       {
-        posts?.map((post) => {
+        posts?.map((post: any) => {
           const {
             id,
             user,
